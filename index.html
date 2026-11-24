@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Orientações Monitores · Rua do Lazer</title>
+<meta name="description" content="Integração dos monitores da Rua do Lazer — procedimentos, padrão de atendimento e responsabilidades.">
+<meta name="theme-color" content="#18303E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2300858B'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' fill='white' text-anchor='middle'%3EOM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Ícones -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-max" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></symbol>
+    <symbol id="i-min" viewBox="0 0 24 24"><path d="M8 3v3a2 2 0 0 1-2 2H3M21 8h-3a2 2 0 0 1-2-2V3M3 16h3a2 2 0 0 1 2 2v3M16 21v-3a2 2 0 0 1 2-2h3"/></symbol>
+    <symbol id="i-pdf" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M12 18v-6M9 15l3 3 3-3"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
+    <symbol id="i-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5V8z"/><path d="m3 8 9 5 9-5M12 13v8"/></symbol>
+    <symbol id="i-rain" viewBox="0 0 24 24"><path d="M20 16.2A4.5 4.5 0 0 0 17.5 8h-1.8A7 7 0 1 0 4 14.9"/><path d="M16 14v6M8 14v6M12 16v6"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/></symbol>
+    <symbol id="i-coffee" viewBox="0 0 24 24"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2M10 2v2M14 2v2"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+    <symbol id="i-shirt" viewBox="0 0 24 24"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></symbol>
+    <symbol id="i-zoom" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 22V12h6v10"/></symbol>
+    <symbol id="i-tree" viewBox="0 0 24 24"><path d="M12 22v-6M8 16h8l-3-4h2l-3-4h1.5L12 2 8.5 8H10l-3 4h2Z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m6 3 14 9-14 9V3z"/></symbol>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <a class="brand" href="#/1" data-go="0" aria-label="Ir para a capa">
+    <span class="brand-mark">OM</span>
+    <span class="brand-text"><strong>Orientações Monitores</strong><small>Associação Volvo · Rua do Lazer</small></span>
+  </a>
+  <div class="tools">
+    <button class="tool" id="btnToc" title="Sumário (M)" aria-label="Abrir sumário"><svg><use href="#i-list"/></svg></button>
+    <button class="tool" id="btnPdf" title="Baixar PDF" aria-label="Baixar apresentação em PDF"><svg><use href="#i-pdf"/></svg></button>
+    <button class="tool tool-accent" id="btnFull" title="Tela cheia (F)" aria-label="Tela cheia"><svg><use href="#i-max"/></svg></button>
+  </div>
+</header>
+
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<main class="deck" id="deck">
+
+  <!-- 01 · CAPA -->
+  <section class="slide slide-cover" data-title="Integração dos monitores">
+    <div class="slide-inner cover">
+      <div class="cover-text">
+        <p class="eyebrow reveal">Associação Volvo · Integração</p>
+        <h1 class="reveal">Integração<br>dos monitores</h1>
+        <p class="cover-tag reveal"><span>Rua do Lazer</span></p>
+        <p class="cover-sub reveal">Procedimentos, padrão de atendimento e responsabilidades.</p>
+        <div class="pill-row reveal">
+          <span class="pill"><svg><use href="#i-smile"/></svg>Crianças</span>
+          <span class="pill"><svg><use href="#i-star"/></svg>Recreação</span>
+          <span class="pill"><svg><use href="#i-shield"/></svg>Segurança</span>
+        </div>
+        <button class="cta reveal" data-next>Começar <svg><use href="#i-right"/></svg></button>
+      </div>
+      <div class="cover-visual reveal">
+        <button class="photo cover-photo" style="--img:url(img/rua-brinquedo.jpg)" data-caption="Rua do Lazer em funcionamento" aria-label="Ampliar foto"></button>
+        <div class="goal-card">
+          <p class="label">Nosso objetivo</p>
+          <p>Garantir uma experiência <b>segura, organizada e divertida</b> para todas as crianças.</p>
+        </div>
+        <blockquote class="cover-quote">“A experiência das crianças depende da atenção, do cuidado e da energia de cada monitor.”</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 · O QUE É -->
+  <section class="slide" data-title="O que é a Rua do Lazer?">
+    <div class="slide-inner">
+      <div class="s-head reveal"><span class="s-num">02</span><div><p class="kicker">Integração dos monitores</p><h2>O que é a Rua do Lazer?</h2></div></div>
+      <div class="grid g-2-1">
+        <div class="stack">
+          <article class="card card-icon reveal tap" data-toggle>
+            <span class="ic ic-orange"><svg><use href="#i-star"/></svg></span>
+            <div><h3>Propósito</h3>
+              <ul class="bullets"><li>Recreação aos finais de semana e feriados</li><li>Momentos de diversão para associados, familiares e convidados</li></ul></div>
+          </article>
+          <article class="card card-icon reveal tap" data-toggle>
+            <span class="ic ic-teal"><svg><use href="#i-smile"/></svg></span>
+            <div><h3>Público atendido</h3>
+              <ul class="bullets"><li>Crianças de diferentes faixas etárias</li><li>Atendimento destinado a crianças de <b>até 12 anos</b></li></ul></div>
+          </article>
+          <div class="stat-row reveal">
+            <div class="stat"><strong>Sáb · Dom</strong><span>e feriados</span></div>
+            <div class="stat"><strong>até 12</strong><span>anos de idade</span></div>
+            <div class="stat"><strong>13h30–17h30</strong><span>atividades</span></div>
+          </div>
+        </div>
+        <button class="photo tall reveal" style="--img:url(img/rua-brinquedo.jpg)" data-caption="Rua do Lazer — recreação com os monitores"><span class="zoom"><svg><use href="#i-zoom"/></svg></span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · PAPEL DO MONITOR -->
+  <section class="slide" data-title="Papel do monitor">
+    <div class="slide-inner">
+      <div class="s-head reveal"><span class="s-num">02</span><div><p class="kicker">Integração dos monitores</p><h2>Papel do monitor</h2></div></div>
+      <div class="grid g-2-1">
+        <div>
+          <p class="hint reveal">Toque em cada missão para marcá-la como entendida.</p>
+          <div class="mission-grid" data-checklist>
+            <button class="mission reveal" data-check><span class="mi"><svg><use href="#i-shield"/></svg></span><span>Garantir diversão com <b>segurança</b></span><i class="tick"><svg><use href="#i-check"/></svg></i></button>
+            <button class="mission reveal" data-check><span class="mi"><svg><use href="#i-heart"/></svg></span><span>Promover <b>inclusão e respeito</b></span><i class="tick"><svg><use href="#i-check"/></svg></i></button>
+            <button class="mission reveal" data-check><span class="mi"><svg><use href="#i-users"/></svg></span><span><b>Organizar e conduzir</b> atividades</span><i class="tick"><svg><use href="#i-check"/></svg></i></button>
+            <button class="mission reveal" data-check><span class="mi"><svg><use href="#i-box"/></svg></span><span>Zelar pelos <b>materiais e equipamentos</b></span><i class="tick"><svg><use href="#i-check"/></svg></i></button>
+          </div>
+          <div class="meter reveal"><div class="meter-bar"><span data-meter></span></div><p><b data-count>0</b>/4 missões confirmadas <em class="done-msg">· Pronto para a ação!</em></p></div>
+        </div>
+        <button class="photo tall reveal" style="--img:url(img/rua-monitores.jpg)" data-caption="Monitores conduzindo as atividades"><span class="zoom"><svg><use href="#i-zoom"/></svg></span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 · ESPAÇOS 1 -->
+  <section class="slide" data-title="Espaços: Rua do Lazer e Espaço Kids">
+    <div class="slide-inner">
+      <div class="s-head reveal"><span class="s-num">03</span><div><p class="kicker">Integração dos monitores</p><h2>Espaços utilizados</h2></div></div>
+      <div class="grid g-2 fill">
+        <article class="place reveal">
+          <div class="place-photos two">
+            <button class="photo" style="--img:url(img/rua-gramado.jpg)" data-gallery="espacos" data-caption="Rua do Lazer — espaço principal das atividades"></button>
+            <button class="photo" style="--img:url(img/rua-monitores.jpg)" data-gallery="espacos" data-caption="Rua do Lazer com os brinquedos montados"></button>
+          </div>
+          <div class="place-info"><span class="ic ic-teal"><svg><use href="#i-tree"/></svg></span><div><h3>Rua do Lazer</h3><p>Espaço principal das atividades.</p></div></div>
+        </article>
+        <article class="place reveal">
+          <div class="place-photos three">
+            <button class="photo" style="--img:url(img/kids-fachada.jpg)" data-gallery="espacos" data-caption="Espaço Kids — fachada"></button>
+            <button class="photo" style="--img:url(img/kids-interno.jpg)" data-gallery="espacos" data-caption="Espaço Kids — área interna"></button>
+            <button class="photo" style="--img:url(img/kids-mesas.jpg)" data-gallery="espacos" data-caption="Espaço Kids — mesas e materiais"></button>
+          </div>
+          <div class="place-info"><span class="ic ic-orange"><svg><use href="#i-home"/></svg></span><div><h3>Espaço Kids</h3><p>Uso em situações específicas, principalmente em <b>dias de chuva</b>.</p></div></div>
+        </article>
+      </div>
+      <p class="hint center reveal">Toque nas fotos para ampliar.</p>
+    </div>
+  </section>
+
+  <!-- 05 · ESPAÇOS 2 -->
+  <section class="slide" data-title="Espaços: Depósito e Guarita">
+    <div class="slide-inner">
+      <div class="s-head reveal"><span class="s-num">03</span><div><p class="kicker">Integração dos monitores</p><h2>Espaços utilizados</h2></div></div>
+      <div class="grid g-2 fill">
+        <article class="place reveal">
+          <div class="place-photos two">
+            <button class="photo" style="--img:url(img/deposito-porta.jpg)" data-gallery="espacos2" data-caption="Depósito — porta de acesso"></button>
+            <button class="photo" style="--img:url(img/deposito-interno.jpg)" data-gallery="espacos2" data-caption="Depósito — materiais e equipamentos"></button>
+          </div>
+          <div class="place-info"><span class="ic ic-lime"><svg><use href="#i-box"/></svg></span><div><h3>Depósito</h3><p>Retirada e guarda dos materiais.</p></div></div>
+        </article>
+        <article class="place reveal">
+          <div class="place-photos one">
+            <button class="photo" style="--img:url(img/guarita.jpg)" data-gallery="espacos2" data-caption="Guarita — apoio para comunicação com equipes internas"></button>
+          </div>
+          <div class="place-info"><span class="ic ic-navy"><svg><use href="#i-pin"/></svg></span><div><h3>Guarita</h3><p>Apoio para comunicação com equipes internas.</p></div></div>
+        </article>
+      </div>
+      <p class="hint center reveal">Toque nas fotos para ampliar.</p>
+    </div>
+  </section>
+
+  <!-- 06 · APRESENTAÇÃO PESSOAL -->
+  <section class="slide" data-title="Apresentação pessoal">
+    <div class="slide-inner">
+      <div class="s-head reveal"><span class="s-num">04</span><div><p class="kicker">Integração dos monitores</p><h2>Apresentação pessoal</h2></div></div>
+      <div class="grid g-3">
+        <article class="card reveal tone-ok">
+          <h3 class="card-title"><span class="dot ok"><svg><use href="#i-check"/></svg></span>Vestimenta obrigatória</h3>
+          <ul class="bullets"><li>Camiseta preta</li><li>Colete disponibilizado pela AV</li><li>Calça ou bermuda confortável</li><li>Tênis fechado</li></ul>
+        </article>
+        <article class="card reveal tone-no">
+          <h3 class="card-title"><span class="dot no"><svg><use href="#i-x"/></svg></span>Não é permitido</h3>
+          <ul class="bullets"><li>Jeans</li><li>Sandália</li><li>Crocs</li><li>Chinelo</li></ul>
+        </article>
+        <article class="card reveal tone-info">
+          <h3 class="card-title"><span class="dot info"><svg><use href="#i-star"/></svg></span>Cuidados adicionais</h3>
+          <ul class="bullets"><li>Manter aparência organizada</li><li>Cabelos longos presos</li><li>Zelar pela imagem profissional</li></ul>
+        </article>
+      </div>
+      <div class="game reveal" data-game="dress">
+        <div class="game-head"><span class="ic ic-teal sm"><svg><use href="#i-shirt"/></svg></span><p><b>Desafio rápido:</b> pode ou não pode usar? Toque para descobrir.</p><span class="score" data-score>0/8</span></div>
+        <div class="chips">
+          <button class="chip" data-ok="1">Camiseta preta</button>
+          <button class="chip" data-ok="0">Jeans</button>
+          <button class="chip" data-ok="1">Colete da AV</button>
+          <button class="chip" data-ok="0">Crocs</button>
+          <button class="chip" data-ok="1">Tênis fechado</button>
+          <button class="chip" data-ok="0">Chinelo</button>
+          <button class="chip" data-ok="1">Bermuda confortável</button>
+          <button class="chip" data-ok="0">Sandália</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 · POSTURA -->
+  <section class="slide" data-title="Postura profissional">
+    <div class="slide-inner">
+      <div class="s-head reveal"><span class="s-num">05</span><div><p class="kicker">Integração dos monitores</p><h2>Postura profissional</h2></div></div>
+      <div class="grid g-2-1 align-c">
+        <div>
+          <p class="section-label reveal">Durante o atendimento</p>
+          <div class="check-grid" data-checklist>
+            <button class="check reveal" data-check><i class="box"><svg><use href="#i-check"/></svg></i>Ser educado</button>
+            <button class="check reveal" data-check><i class="box"><svg><use href="#i-check"/></svg></i>Ser atencioso</button>
+            <button class="check reveal" data-check><i class="box"><svg><use href="#i-check"/></svg></i>Ser prestativo</button>
+            <button class="check reveal" data-check><i class="box"><svg><use href="#i-check"/></svg></i>Demonstrar iniciativa</button>
+            <button class="check reveal" data-check><i class="box"><svg><use href="#i-check"/></svg></i>Tratar todas as crianças igualmente</button>
+            <button class="check reveal" data-check><i class="box"><svg><use href="#i-check"/></svg></i>Intervir diante de situações de risco</button>
+          </div>
+          <div class="meter reveal"><div class="meter-bar"><span data-meter></span></div><p><b data-count>0</b>/6 atitudes <em class="done-msg">· Postura nota 10!</em></p></div>
+        </div>
+        <div class="highlight reveal">
+          <span class="ic ic-white lg"><svg><use href="#i-users"/></svg></span>
+          <p>Cada monitor representa <b>sua empresa</b> e a <b>Associação</b>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 · CELULAR -->
+  <section class="slide" data-title="Uso do celular">
+    <div class="slide-inner">
+      <div class="s-head reveal"><span class="s-num">06</span><div><p class="kicker">Integração dos monitores</p><h2>Uso do celular</h2></div></div>
+      <div class="banner reveal"><svg><use href="#i-smile"/></svg>Crianças primeiro. Celular depois.</div>
+      <div class="grid g-phone">
+        <div class="stack">
+          <article class="card card-icon reveal tone-no">
+            <span class="ic ic-red"><svg><use href="#i-x"/></svg></span>
+            <div><h3>Evite</h3><ul class="bullets"><li>Usar durante a monitoria ou atividades</li><li>Usar enquanto caminha ou transporta materiais</li></ul></div>
+          </article>
+          <article class="card card-icon reveal tone-ok">
+            <span class="ic ic-green"><svg><use href="#i-check"/></svg></span>
+            <div><h3>Quando necessário</h3><ul class="bullets"><li>Utilize apenas em local seguro</li><li>Retome a atenção integral às crianças</li></ul></div>
+          </article>
+          <p class="note reveal"><svg><use href="#i-alert"/></svg>O uso inadequado prejudica a segurança e a credibilidade da atividade.</p>
+        </div>
+        <div class="phone reveal" data-replay>
+          <div class="phone-top"><span>10:45</span><span class="notch"></span><span>●●●</span></div>
+          <div class="chat-head"><span class="avatar"><svg><use href="#i-shield"/></svg></span><div><b>Segurança</b><small>online</small></div></div>
+          <div class="chat">
+            <p class="bubble in" style="--d:.3s">Cuidado! ⚠️</p>
+            <p class="bubble in" style="--d:1.1s">Pare! Não ande mexendo no celular.</p>
+            <p class="bubble out" style="--d:1.9s">Evite acidentes! ;)</p>
+          </div>
+          <div class="chat-input"><span>Mensagem</span><b>Enviar</b></div>
+          <button class="replay" aria-label="Repetir animação"><svg><use href="#i-refresh"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 · HORÁRIOS -->
+  <section class="slide" data-title="Horários e organização">
+    <div class="slide-inner">
+      <div class="s-head reveal"><span class="s-num">07</span><div><p class="kicker">Integração dos monitores</p><h2>Horários e organização</h2></div></div>
+      <div class="timeline reveal">
+        <div class="t-point"><span class="t-time">13h30</span><span class="t-label">Brinquedos montados e prontos</span></div>
+        <div class="t-track"><span class="t-fill"></span><span class="t-sun"><svg><use href="#i-sun"/></svg></span></div>
+        <div class="t-point end"><span class="t-time">17h30</span><span class="t-label">Encerramento das atividades</span></div>
+      </div>
+      <p class="section-label reveal">Ao chegar: siga a sequência <span class="muted">· toque em cada etapa</span></p>
+      <div class="steps" data-steps>
+        <button class="step reveal"><span class="n">1</span><svg><use href="#i-key"/></svg><b>Retirar a chave</b><small>do depósito</small></button>
+        <button class="step reveal"><span class="n">2</span><svg><use href="#i-box"/></svg><b>Conferir</b><small>materiais</small></button>
+        <button class="step reveal"><span class="n">3</span><svg><use href="#i-wrench"/></svg><b>Organizar</b><small>equipamentos</small></button>
+        <button class="step reveal"><span class="n">4</span><svg><use href="#i-star"/></svg><b>Preparar</b><small>o espaço</small></button>
+      </div>
+      <p class="steps-msg reveal" data-steps-msg>Siga a ordem: comece pela etapa 1.</p>
+    </div>
+  </section>
+
+  <!-- 10 · MONTAGEM -->
+  <section class="slide" data-title="Montagem dos equipamentos">
+    <div class="slide-inner">
+      <div class="s-head reveal"><span class="s-num">08</span><div><p class="kicker">Integração dos monitores</p><h2>Montagem dos equipamentos</h2></div></div>
+      <div class="grid g-3-mont">
+        <article class="card reveal">
+          <h3 class="card-title"><span class="dot ok"><svg><use href="#i-check"/></svg></span>Checklist de montagem</h3>
+          <div class="checklist" data-checklist>
+            <button class="row" data-check><i class="box"><svg><use href="#i-check"/></svg></i>Cama elástica</button>
+            <button class="row" data-check><i class="box"><svg><use href="#i-check"/></svg></i>Brinquedo inflável</button>
+            <button class="row" data-check><i class="box"><svg><use href="#i-check"/></svg></i>Rede de vôlei</button>
+            <button class="row" data-check><i class="box"><svg><use href="#i-check"/></svg></i>Basquete</button>
+            <button class="row" data-check><i class="box"><svg><use href="#i-check"/></svg></i>Badminton</button>
+            <button class="row" data-check><i class="box"><svg><use href="#i-check"/></svg></i>Outros equipamentos disponibilizados</button>
+            <p class="mini"><b data-count>0</b>/6 montados <em class="done-msg">· Tudo pronto!</em></p>
+          </div>
+        </article>
+        <article class="card warn reveal">
+          <h3 class="card-title"><span class="dot warn"><svg><use href="#i-alert"/></svg></span>Atenção: brinquedo inflável</h3>
+          <p class="muted">Antes de liberar para uso:</p>
+          <ol class="num-list">
+            <li><span>1</span>Solicitar a higienização</li>
+            <li><span>2</span>Acionar a equipe pela guarita</li>
+            <li><span>3</span>Liberar somente após a limpeza</li>
+          </ol>
+        </article>
+        <button class="photo reveal" style="--img:url(img/rua-monitores.jpg)" data-caption="Equipamentos montados: inflável e cama elástica"><span class="zoom"><svg><use href="#i-zoom"/></svg></span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 · RECREAÇÃO -->
+  <section class="slide" data-title="Recreação e atividades">
+    <div class="slide-inner">
+      <div class="s-head reveal"><span class="s-num">09</span><div><p class="kicker">Integração dos monitores</p><h2>Recreação e atividades</h2></div></div>
+      <p class="lead reveal">Planeje para atender <b>diferentes idades</b> e respeitar o <b>ritmo de cada criança</b>.</p>
+      <div class="grid g-2">
+        <div class="stack">
+          <p class="section-label reveal">Faixas etárias</p>
+          <div class="age-row">
+            <button class="age reveal tap" data-toggle><span class="age-tag">Grupo 1</span><strong>5 a 8</strong><span>anos</span></button>
+            <button class="age age-2 reveal tap" data-toggle><span class="age-tag">Grupo 2</span><strong>9 a 12</strong><span>anos</span></button>
+          </div>
+        </div>
+        <div class="stack">
+          <p class="section-label reveal">Divisão dos monitores</p>
+          <article class="card card-icon reveal tap" data-toggle><span class="num-badge">1</span><div><h3>Monitor 1</h3><p>Supervisão dos brinquedos</p></div></article>
+          <article class="card card-icon reveal tap" data-toggle><span class="num-badge orange">2</span><div><h3>Monitor 2</h3><p>Recreação dirigida</p></div></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 · PLANEJAMENTO -->
+  <section class="slide" data-title="Planejamento das atividades">
+    <div class="slide-inner">
+      <div class="s-head reveal"><span class="s-num">10</span><div><p class="kicker">Integração dos monitores</p><h2>Planejamento das atividades</h2></div></div>
+      <div class="deadline reveal">
+        <div class="deadline-text"><svg><use href="#i-cal"/></svg><span>Enviar à <b>Recriar</b> até <b>quarta-feira</b></span></div>
+        <div class="week"><span>Seg</span><span>Ter</span><span class="hl">Qua</span><span>Qui</span><span>Sex</span><span class="we">Sáb</span><span class="we">Dom</span></div>
+      </div>
+      <div class="grid g-2 top">
+        <article class="card card-icon reveal">
+          <span class="ic ic-teal"><svg><use href="#i-mail"/></svg></span>
+          <div><h3>O que enviar</h3><ul class="bullets"><li>Atividades que serão realizadas</li><li>Lista de materiais necessários</li></ul></div>
+        </article>
+        <article class="card reveal">
+          <h3 class="card-title"><span class="dot info"><svg><use href="#i-help"/></svg></span>Antes de definir, avalie</h3>
+          <div class="checklist" data-checklist>
+            <button class="row" data-check><i class="box"><svg><use href="#i-check"/></svg></i>Atende diferentes idades?</button>
+            <button class="row" data-check><i class="box"><svg><use href="#i-check"/></svg></i>É segura e divertida?</button>
+            <button class="row" data-check><i class="box"><svg><use href="#i-check"/></svg></i>Mantém as crianças participando?</button>
+            <button class="row" data-check><i class="box"><svg><use href="#i-check"/></svg></i>Existe uma segunda opção?</button>
+            <p class="mini"><b data-count>0</b>/4 <em class="done-msg">· Atividade aprovada, pode enviar!</em></p>
+          </div>
+        </article>
+      </div>
+      <p class="note reveal"><svg><use href="#i-star"/></svg>Planejamento antecipado evita improvisos e melhora a experiência.</p>
+    </div>
+  </section>
+
+  <!-- 13 · CHUVA -->
+  <section class="slide slide-rain is-raining" data-title="Situações de chuva">
+    <div class="rain" aria-hidden="true"></div>
+    <div class="slide-inner">
+      <div class="s-head reveal"><span class="s-num">11</span><div><p class="kicker">Integração dos monitores</p><h2>Situações de chuva</h2></div></div>
+      <div class="weather reveal" role="group" aria-label="Simular clima">
+        <span>Simule o clima:</span>
+        <button class="wbtn" data-weather="sun"><svg><use href="#i-sun"/></svg>Sol</button>
+        <button class="wbtn is-on" data-weather="rain"><svg><use href="#i-rain"/></svg>Chuva</button>
+      </div>
+      <div class="grid g-2-1">
+        <div class="stack">
+          <article class="card reveal w-rain">
+            <h3 class="card-title"><span class="dot info"><svg><use href="#i-rain"/></svg></span>Se estiver chovendo</h3>
+            <ul class="marks">
+              <li class="no"><i><svg><use href="#i-x"/></svg></i>Não montar os brinquedos</li>
+              <li><i><svg><use href="#i-check"/></svg></i>Utilizar o Espaço Kids</li>
+              <li><i><svg><use href="#i-check"/></svg></i>Aplicar atividades recreativas</li>
+              <li><i><svg><use href="#i-check"/></svg></i>Jogos, dinâmicas, mímicas e desafios</li>
+            </ul>
+          </article>
+          <article class="card reveal w-sun">
+            <h3 class="card-title"><span class="dot warn"><svg><use href="#i-sun"/></svg></span>Dia sem chuva</h3>
+            <ul class="marks">
+              <li><i><svg><use href="#i-check"/></svg></i>Atividades na Rua do Lazer, o espaço principal</li>
+              <li><i><svg><use href="#i-check"/></svg></i>Montar os equipamentos conforme o checklist</li>
+              <li><i><svg><use href="#i-check"/></svg></i>Brinquedos prontos às 13h30</li>
+            </ul>
+          </article>
+          <article class="card warn reveal">
+            <h3 class="card-title"><span class="dot no"><svg><use href="#i-x"/></svg></span>Atividades a evitar: artes e trabalhos manuais</h3>
+            <p>Essas atividades são realizadas por outra empresa. Priorize brincadeiras e dinâmicas recreativas.</p>
+          </article>
+        </div>
+        <button class="photo tall reveal" style="--img:url(img/kids-interno.jpg)" data-caption="Espaço Kids — opção para dias de chuva"><span class="zoom"><svg><use href="#i-zoom"/></svg></span><span class="photo-label">Espaço Kids</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14 · OCORRÊNCIAS -->
+  <section class="slide" data-title="Problemas e ocorrências">
+    <div class="slide-inner">
+      <div class="s-head reveal"><span class="s-num">12</span><div><p class="kicker">Integração dos monitores</p><h2>Problemas e ocorrências</h2></div></div>
+      <div class="banner teal reveal"><svg><use href="#i-pin"/></svg><span><b>Precisa de ajuda?</b> Procure a guarita para acionar o técnico de lazer de plantão.</span></div>
+      <div class="scenario reveal">
+        <span>O que fazer quando…</span>
+        <button class="chip" data-target="0">Uma criança se machuca</button>
+        <button class="chip" data-target="0">Começa uma discussão</button>
+        <button class="chip" data-target="1">Um brinquedo quebra</button>
+        <button class="chip" data-target="1">Algo atrapalha a atividade</button>
+        <button class="chip" data-target="2">Surge uma dúvida simples</button>
+      </div>
+      <div class="grid g-3 levels">
+        <article class="card level l-red reveal">
+          <h3 class="card-title"><span class="dot no"><svg><use href="#i-alert"/></svg></span>Comunique imediatamente</h3>
+          <ul class="bullets"><li>Acidentes</li><li>Discussões</li><li>Situações de risco</li></ul>
+        </article>
+        <article class="card level l-orange reveal">
+          <h3 class="card-title"><span class="dot warn"><svg><use href="#i-wrench"/></svg></span>Informe também</h3>
+          <ul class="bullets"><li>Equipamento danificado</li><li>Falhas que afetem a atividade</li></ul>
+        </article>
+        <article class="card level l-green reveal">
+          <h3 class="card-title"><span class="dot ok"><svg><use href="#i-check"/></svg></span>Pode aguardar</h3>
+          <ul class="bullets"><li>Questões não urgentes</li><li>Encaminhar à Recriar para alinhamento com a AV</li></ul>
+        </article>
+      </div>
+      <p class="note reveal"><svg><use href="#i-shield"/></svg>Na dúvida, priorize a segurança e comunique a equipe responsável.</p>
+    </div>
+  </section>
+
+  <!-- 15 · INTERVALOS -->
+  <section class="slide" data-title="Intervalos">
+    <div class="slide-inner">
+      <div class="s-head reveal"><span class="s-num">13</span><div><p class="kicker">Integração dos monitores</p><h2>Intervalos</h2></div></div>
+      <p class="lead reveal">O atendimento deve permanecer funcionando <b>durante todo o período</b>.</p>
+      <div class="grid g-2">
+        <div class="stack">
+          <article class="card card-icon reveal tone-ok">
+            <span class="ic ic-green"><svg><use href="#i-check"/></svg></span>
+            <div><h3>Como organizar</h3><ul class="bullets"><li>Fazer os intervalos de forma alternada</li><li>Combinar a saída entre os monitores</li></ul></div>
+          </article>
+          <article class="card card-icon reveal tone-no">
+            <span class="ic ic-red"><svg><use href="#i-x"/></svg></span>
+            <div><h3>Regra principal</h3><ul class="bullets"><li>Os dois monitores não devem sair juntos</li><li>Sempre manter alguém no atendimento</li></ul></div>
+          </article>
+        </div>
+        <div class="sim reveal" data-sim>
+          <p class="section-label">Simulador · toque nos monitores</p>
+          <div class="sim-people">
+            <button class="person" data-person><span class="avatar-lg">M1</span><b>Monitor 1</b><small data-state>No atendimento</small></button>
+            <button class="person" data-person><span class="avatar-lg orange">M2</span><b>Monitor 2</b><small data-state>No atendimento</small></button>
+          </div>
+          <p class="sim-status ok" data-sim-status><svg><use href="#i-check"/></svg><span>Atendimento completo.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 16 · SEGURANÇA -->
+  <section class="slide" data-title="Segurança e circulação">
+    <div class="slide-inner">
+      <div class="s-head reveal"><span class="s-num">14</span><div><p class="kicker">Integração dos monitores</p><h2>Segurança e circulação</h2></div></div>
+      <div class="grid g-1-2">
+        <div class="stack">
+          <article class="card reveal">
+            <h3 class="card-title"><span class="dot info"><svg><use href="#i-shield"/></svg></span>Dentro da Associação</h3>
+            <ul class="bullets"><li>Utilizar calçadas e faixas de pedestres</li><li>Respeitar as sinalizações</li><li>Respeitar o limite de <b>20 km/h</b></li><li>Manter os faróis ligados</li><li>Dar prioridade aos pedestres</li></ul>
+          </article>
+          <div class="speed reveal"><div class="sign"><strong>20</strong><small>km/h</small></div><p><b>Atenção:</b> reporte riscos, incidentes e acidentes imediatamente.</p></div>
+        </div>
+        <button class="photo map reveal" style="--img:url(img/mapa.png)" data-caption="Mapa — circulação interna (AV = Associação Volvo)"><span class="zoom"><svg><use href="#i-zoom"/></svg></span><span class="photo-label">Mapa · toque para ampliar</span></button>
+      </div>
+      <div class="banner dark reveal"><svg><use href="#i-shield"/></svg>Segurança é responsabilidade de todos.</div>
+    </div>
+  </section>
+
+  <!-- 17 · QUIZ -->
+  <section class="slide" data-title="Teste rápido">
+    <div class="slide-inner">
+      <div class="s-head reveal"><span class="s-num">✓</span><div><p class="kicker">Revisão</p><h2>Teste rápido</h2></div></div>
+      <div class="quiz reveal" data-quiz>
+        <div class="quiz-top"><span data-q-count>Pergunta 1 de 6</span><div class="quiz-dots" data-q-dots></div></div>
+        <h3 class="quiz-q" data-q-text></h3>
+        <div class="quiz-opts" data-q-opts></div>
+        <p class="quiz-fb" data-q-fb></p>
+        <div class="quiz-actions"><button class="cta sm" data-q-next hidden>Próxima <svg><use href="#i-right"/></svg></button></div>
+        <div class="quiz-end" data-q-end hidden>
+          <span class="ic ic-orange lg"><svg><use href="#i-trophy"/></svg></span>
+          <h3 data-q-score></h3><p data-q-msg></p>
+          <button class="cta sm ghost" data-q-restart><svg><use href="#i-refresh"/></svg>Refazer</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 18 · ENCERRAMENTO -->
+  <section class="slide slide-end" data-title="O que esperamos de você">
+    <div class="slide-inner">
+      <div class="s-head reveal"><span class="s-num">15</span><div><p class="kicker">Integração dos monitores</p><h2>O que esperamos de você</h2></div></div>
+      <div class="grid g-2 align-c">
+        <div>
+          <div class="values">
+            <span class="value reveal"><svg><use href="#i-shield"/></svg>Segurança</span>
+            <span class="value reveal"><svg><use href="#i-help"/></svg>Atenção</span>
+            <span class="value reveal"><svg><use href="#i-smile"/></svg>Alegria</span>
+            <span class="value reveal"><svg><use href="#i-list"/></svg>Organização</span>
+            <span class="value reveal"><svg><use href="#i-star"/></svg>Proatividade</span>
+            <span class="value reveal"><svg><use href="#i-heart"/></svg>Respeito com todos</span>
+          </div>
+          <blockquote class="end-quote reveal">“Uma brincadeira bem conduzida pode transformar o dia de uma criança.<br><b>Seu trabalho faz a diferença.</b>”</blockquote>
+          <button class="cta ghost reveal" data-go="0"><svg><use href="#i-refresh"/></svg>Voltar ao início</button>
+        </div>
+        <div class="collage reveal">
+          <button class="photo" style="--img:url(img/rua-monitores.jpg)" data-gallery="fim" data-caption="Equipe em ação na Rua do Lazer"></button>
+          <button class="photo" style="--img:url(img/rua-brinquedo.jpg)" data-gallery="fim" data-caption="Diversão com segurança"></button>
+          <button class="photo" style="--img:url(img/kids-fachada.jpg)" data-gallery="fim" data-caption="Espaço Kids"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<nav class="navbar" aria-label="Navegação dos slides">
+  <button class="nav-btn" id="prev" aria-label="Slide anterior"><svg><use href="#i-left"/></svg><span>Anterior</span></button>
+  <div class="dots" id="dots"></div>
+  <span class="counter" id="counter">1 / 18</span>
+  <button class="nav-btn primary" id="next" aria-label="Próximo slide"><span>Próximo</span><svg><use href="#i-right"/></svg></button>
+</nav>
+
+<!-- Sumário -->
+<div class="toc" id="toc" aria-hidden="true">
+  <div class="toc-panel" role="dialog" aria-label="Sumário">
+    <div class="toc-head"><h3>Sumário</h3><button class="tool" data-close aria-label="Fechar"><svg><use href="#i-x"/></svg></button></div>
+    <ol id="tocList"></ol>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="tool lb-close" data-close aria-label="Fechar"><svg><use href="#i-x"/></svg></button>
+  <button class="lb-nav lb-prev" aria-label="Foto anterior"><svg><use href="#i-left"/></svg></button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button class="lb-nav lb-next" aria-label="Próxima foto"><svg><use href="#i-right"/></svg></button>
+</div>
+
+<!-- Gerando PDF -->
+<div class="busy" id="busy" aria-hidden="true">
+  <div class="busy-card"><span class="spinner"></span><p id="busyText">Gerando PDF…</p><div class="meter-bar"><span id="busyBar"></span></div></div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
