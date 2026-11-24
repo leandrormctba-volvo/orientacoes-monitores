@@ -9,21 +9,16 @@
   /* ---------- atraso escalonado das animações ---------- */
   slides.forEach(s => $$('.reveal', s).forEach((el, i) => el.style.setProperty('--i', i)));
 
-  /* ---------- pontos e sumário ---------- */
-  const dots = $('#dots');
+  /* ---------- sumário ---------- */
   const tocList = $('#tocList');
   slides.forEach((s, i) => {
-    const d = document.createElement('button');
-    d.setAttribute('aria-label', `Ir para o slide ${i + 1}`);
-    d.addEventListener('click', () => go(i));
-    dots.appendChild(d);
     const li = document.createElement('li');
     li.innerHTML = `<button><span>${String(i + 1).padStart(2, '0')}</span>${s.dataset.title}</button>`;
     li.firstChild.addEventListener('click', () => { go(i); toggleToc(false); });
     tocList.appendChild(li);
   });
 
-  function go(i, fromHash) {
+  function go(i) {
     i = Math.max(0, Math.min(total - 1, i));
     slides.forEach((s, k) => {
       s.classList.toggle('is-active', k === i);
@@ -40,11 +35,9 @@
     current = i;
     $('#counter').textContent = `${i + 1} / ${total}`;
     $('#progressBar').style.width = `${((i + 1) / total) * 100}%`;
-    $$('#dots button').forEach((d, k) => d.classList.toggle('on', k === i));
     $$('#tocList button').forEach((d, k) => d.classList.toggle('on', k === i));
     $('#prev').disabled = i === 0;
     $('#next').disabled = i === total - 1;
-    if (!fromHash) history.replaceState(null, '', `#/${i + 1}`);
   }
   const next = () => go(current + 1);
   const prev = () => go(current - 1);
@@ -53,8 +46,8 @@
   $$('[data-next]').forEach(b => b.addEventListener('click', next));
   $$('[data-go]').forEach(b => b.addEventListener('click', e => { e.preventDefault(); go(+b.dataset.go); }));
 
-  const fromHash = () => { const m = location.hash.match(/#\/(\d+)/); return m ? +m[1] - 1 : 0; };
-  window.addEventListener('hashchange', () => go(fromHash(), true));
+  // ao recarregar a página, sempre começa na capa (limpa qualquer #/n antigo do endereço)
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
 
   /* ---------- teclado ---------- */
   document.addEventListener('keydown', e => {
@@ -345,5 +338,5 @@
   }
   $('#btnPdf').addEventListener('click', exportPdf);
 
-  go(fromHash(), true);
+  go(0);
 })();

@@ -411,11 +411,9 @@ h3{font-size:1.12em;color:var(--navy);font-weight:800;line-height:1.2}
 .nav-btn.primary{background:var(--teal);color:#fff;border-color:var(--teal)}
 .nav-btn.primary:hover{background:var(--teal-d);color:#fff}
 .nav-btn:disabled{opacity:.35;pointer-events:none}
-.dots{flex:1;display:flex;justify-content:center;gap:6px;flex-wrap:wrap}
-.dots button{width:9px;height:9px;border-radius:99px;background:var(--line);transition:all .3s;padding:0}
-.dots button:hover{background:var(--muted)}
-.dots button.on{width:26px;background:var(--teal)}
-.counter{font-weight:800;color:var(--navy);font-size:14px;min-width:56px;text-align:center;font-variant-numeric:tabular-nums}
+.navbar{justify-content:space-between}
+.nav-btn{min-width:130px;justify-content:center}
+.counter{flex:1;font-weight:800;color:var(--navy);font-size:15px;min-width:56px;text-align:center;font-variant-numeric:tabular-nums}
 
 /* ---------- Sumário ---------- */
 .toc{position:fixed;inset:0;z-index:40;background:rgba(14,26,33,.5);opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s .3s}
@@ -478,8 +476,12 @@ h3{font-size:1.12em;color:var(--navy);font-weight:800;line-height:1.2}
   .cover-photo{position:relative;inset:auto;aspect-ratio:4/3;width:100%}
   .goal-card{position:relative;left:auto;bottom:auto;width:100%;margin-top:-3em;margin-left:.8em;width:calc(100% - 1.6em)}
   .cover-quote{position:relative;left:auto;text-align:left}
-  .place-photos{min-height:13em;flex:none}
-  .place-photos.one{min-height:18em}
+  .grid.fill{flex:none}
+  .place{overflow:visible}
+  .place-photos{flex:none;min-height:0;height:13.5em}
+  .place-photos.one{height:17em}
+  .place-info{padding:.9em 1em;align-items:flex-start}
+  .place-info .ic{width:2.4em;height:2.4em}
   .mission-grid,.check-grid{grid-template-columns:1fr}
   .mission{flex-direction:row;align-items:center;padding:1em 3em 1em 1em}
   .tick{top:50%;transform:translateY(-50%)}
@@ -503,7 +505,6 @@ h3{font-size:1.12em;color:var(--navy);font-weight:800;line-height:1.2}
 @container slide (max-width: 420px){
   .stat-row{grid-template-columns:1fr}
   .values{grid-template-columns:1fr}
-  .place-photos.three{grid-template-columns:1fr 1fr;grid-template-rows:auto}
 }
 
 @media (max-width: 720px){
@@ -511,16 +512,14 @@ h3{font-size:1.12em;color:var(--navy);font-weight:800;line-height:1.2}
   .brand-text small{display:none}
   .brand-text strong{font-size:14px}
   .tool{width:38px;height:38px}
-  .dots{display:none}
-  .counter{flex:1}
-  .nav-btn span{display:none}
-  .nav-btn{width:48px;justify-content:center;padding:0}
+  .nav-btn{min-width:0;padding:0 18px}
 }
 @media (max-width: 360px){.brand-text{display:none}}
 
 /* tela cheia */
 :fullscreen body,body:fullscreen{background:var(--paper)}
 .grid.fill{flex:1}
+@container slide (max-width: 900px){.grid.fill{flex:none}}
 /* centraliza verticalmente sem cortar conteúdo quando há rolagem */
 .slide-inner>:first-child{margin-top:auto}
 .slide-inner>:last-child{margin-bottom:auto}
