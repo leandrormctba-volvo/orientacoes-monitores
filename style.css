@@ -526,3 +526,21 @@ h3{font-size:1.12em;color:var(--navy);font-weight:800;line-height:1.2}
 .cover>:first-child,.cover>:last-child{margin:0}
 [hidden]{display:none !important}
 .g-2.top{align-items:start}
+
+/* slide 19 · confirmação de ciência */
+.btn-row{display:flex;gap:.7em;flex-wrap:wrap}
+.confirm-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.45em 1.2em}
+.confirm-list li{position:relative;padding-left:1.5em;line-height:1.35;font-size:.95em}
+.confirm-list li::before{content:"✓";position:absolute;left:0;top:0;color:var(--green);font-weight:900}
+.form-card{background:var(--navy);color:#fff;border-radius:24px;padding:1.6em;display:flex;flex-direction:column;align-items:center;gap:.9em;text-align:center;box-shadow:0 30px 50px -30px var(--navy)}
+.form-card .cta{align-self:center;background:var(--orange);box-shadow:0 10px 24px -12px var(--orange)}
+.form-card .cta:hover{background:#E07E2C}
+.form-card .cta.is-disabled{opacity:.45;pointer-events:none}
+.qr{width:11em;height:11em;background:#fff;border-radius:16px;padding:.7em;display:grid;place-items:center}
+.qr img,.qr canvas{width:100% !important;height:100% !important;image-rendering:pixelated}
+.qr-empty{color:var(--muted);font-size:.85em;font-weight:700;line-height:1.3}
+.form-hint{font-size:.88em;color:#B9CBD1;max-width:22em}
+@container slide (max-width: 900px){
+  .confirm-list{grid-template-columns:1fr}
+  .qr,.qr-hint{display:none}
+}

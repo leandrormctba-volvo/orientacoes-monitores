@@ -8,3 +8,5 @@ Apresentação interativa de integração dos monitores da Rua do Lazer (Associa
 - Layout adaptado para celular
 
 Abra o `index.html` no navegador para usar.
+
+- Slide final **Confirmação de ciência**: QR code e botão para o Microsoft Forms (link na constante `FORMS_URL` no início do `app.js`)

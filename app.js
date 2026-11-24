@@ -1,4 +1,8 @@
 /* Orientações Monitores · Rua do Lazer — interações */
+
+/* >>> Link do Microsoft Forms (Confirmação de ciência). Cole o link de compartilhamento entre as aspas. <<< */
+const FORMS_URL = 'https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=rpNU8pgc10GKMwvnX1_mA0btzhzJXDREtYuhuTDUKNdUQU9TVkY4WDVITjBHUkZRQjlRWVMzUVk4Wi4u';
+
 (() => {
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -282,6 +286,23 @@
     const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = fail; document.head.appendChild(s);
   });
   const preload = src => new Promise(ok => { const i = new Image(); i.onload = i.onerror = ok; i.src = src; });
+
+  /* ---------- formulário de confirmação (Microsoft Forms) ---------- */
+  $$('[data-form]').forEach(card => {
+    const link = $('[data-form-link]', card), qr = $('[data-form-qr]', card), status = $('[data-form-status]', card);
+    if (!FORMS_URL) {
+      link.classList.add('is-disabled'); link.removeAttribute('href');
+      qr.innerHTML = '<span class="qr-empty">QR code aparece quando o formulário for configurado</span>';
+      status.textContent = 'Formulário em configuração.';
+      return;
+    }
+    link.href = FORMS_URL;
+    status.textContent = 'Abre em uma nova aba. Responda individualmente.';
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js')
+      .then(() => new window.QRCode(qr, { text: FORMS_URL, width: 256, height: 256, correctLevel: window.QRCode.CorrectLevel.M }))
+      .catch(() => { qr.innerHTML = '<span class="qr-empty">Use o botão abaixo</span>'; });
+  });
+
 
   // html2canvas não resolve <use href="#…">: copia o desenho do ícone para dentro do <svg>
   function inlineIcons(root) {
