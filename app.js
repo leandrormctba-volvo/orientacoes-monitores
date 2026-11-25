@@ -210,13 +210,31 @@ const FORMS_URL = 'https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=rpNU
   $$('.scenario').forEach(sc => {
     const slide = sc.closest('.slide');
     const levels = $('.levels', slide); const cards = $$('.level', levels);
-    $$('.chip', sc).forEach(c => c.addEventListener('click', () => {
-      const on = !c.classList.contains('is-on');
-      $$('.chip', sc).forEach(x => x.classList.remove('is-on'));
+    const chips = $$('.chip', sc);
+    // etiqueta dentro do box mostrando a situação escolhida
+    cards.forEach(card => { const t = document.createElement('span'); t.className = 'level-tag'; card.appendChild(t); });
+    // destaca o box ligado à situação (null = nenhum)
+    const show = chip => {
       cards.forEach(x => x.classList.remove('is-focus'));
-      levels.classList.toggle('has-focus', on);
-      if (on) { c.classList.add('is-on'); cards[+c.dataset.target].classList.add('is-focus'); }
-    }));
+      levels.classList.toggle('has-focus', !!chip);
+      if (!chip) return;
+      const card = cards[+chip.dataset.target];
+      card.classList.add('is-focus');
+      $('.level-tag', card).textContent = `👉 ${chip.textContent}`;
+    };
+    const locked = () => chips.find(x => x.classList.contains('is-on'));
+    chips.forEach(c => {
+      // ao passar o mouse: prévia do destaque
+      c.addEventListener('mouseenter', () => show(c));
+      c.addEventListener('mouseleave', () => show(locked()));
+      // ao clicar/tocar: fixa (ou solta) o destaque
+      c.addEventListener('click', () => {
+        const on = !c.classList.contains('is-on');
+        chips.forEach(x => x.classList.remove('is-on'));
+        if (on) c.classList.add('is-on');
+        show(on ? c : null);
+      });
+    });
   });
 
   /* ---------- simulador de intervalos ---------- */
